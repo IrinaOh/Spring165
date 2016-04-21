@@ -1,0 +1,6 @@
+Monday 72 46
+Tuesday 36 22
+Wednesday 48 21
+Thursday 86 53
+Friday 90 32
+Saturday 86 21
