@@ -29,7 +29,7 @@ void prompt(Complex & x)
     cout << "Imaginary: ";
     cin >> x.imaginary; 
   
-    cout << endl;
+    
     
     return;
 }
@@ -39,9 +39,9 @@ void prompt(Complex & x)
  * Function: display
  * Purpose: Displays the added complex numbers.
  ***********************************************************************/
-void display(Complex x)
+void display(Complex & x)
 {
-    cout << x.real << "+" << x.imaginary << "i" << endl;
+    cout << x.real << " + " << x.imaginary << "i" << endl;
 }
 /**********************************************************************
  * Function: addComplex
@@ -50,10 +50,11 @@ void display(Complex x)
 Complex addComplex(const Complex & x, const Complex & y)
 {
    // TODO: Fill in the body of the add function
-   sum.real = c1.real + c2.real;
-   sum.imaginary = c1.imaginary + c2.imaginary;
+   Complex internalSum;
+   internalSum.real = x.real + y.real;
+   internalSum.imaginary = x.imaginary + y.imaginary;
    
-   return sum;
+   return internalSum;
 }
 
 
@@ -68,18 +69,18 @@ int main()
    Complex c2;
 
    // Call your prompt function twice to fill in c1, and c2 
-   prompt(Complex & c1);
-   prompt(Complex & c2);
+   prompt(c1);
+   prompt(c2);
 
    // Declare another Complex for the sum
    Complex sum;
 
    // Call the addComplex function, putting the result in sum;
-   sum = addComplex(Complex & c1, Complex & c2);
+   sum = addComplex(c1, c2);
    
    cout << "\nThe sum is: ";
    display(sum);
-   cout << endl;
+
  
    return 0;
 }
