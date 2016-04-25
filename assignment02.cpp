@@ -39,6 +39,7 @@ struct UserQuery {
  void timePrompt(UserQuery & x);
  void readFile(UserQuery & x, AccessRecord record[500]);
  void fileSearch(UserQuery & x, AccessRecord record[500]);
+ void displayResults(UserQuery  x, AccessRecord record[500]);
  
 /**********************************************************************
  * Function: main
@@ -53,6 +54,8 @@ int main()
    timePrompt(uQ1);
    readFile(uQ1, record);
    fileSearch(uQ1, record);
+   displayResults(uQ1, record);
+  
    return 0;
 }
 
@@ -91,20 +94,23 @@ int main()
     int i = 0;
     ifstream fin(x.accessFile);  
     if (fin.fail()) // check to see if the file correctly opened 
-    return; 
-    // fetch the data int data; 
+      {
+         cout << "Unable to open: " << x.accessFile << endl;
+         return; 
+      }
+   char text[256];
     while (!fin.eof())
-    {
-      fin >> record[i].timeStamp;
+    {   
       fin >> record[i].fileName;
       fin >> record[i].user;
+      fin >> record[i].timeStamp;
       i++;
       x.fileLength = i; 
     }
                  
     // close the file 
     fin.close(); 
-    
+   
   return;
  }
  
@@ -117,11 +123,12 @@ int main()
  {
     for(int i = 0; i < x.fileLength; i++){
        if ( x.startTime <= record[i].timeStamp && x.endTime >= record[i].timeStamp)
-      {
+       {
          int j = 0;
          x.results[j] = i;
-      };
-    };
+         j++;
+       }
+    }
     return;
  }
  
@@ -129,29 +136,27 @@ int main()
  * Function: displayResults
  * Purpose: Displays results from search.
  ***********************************************************************/
- void displayResults(UserQuery & x, AccessRecord record[500])
+ void displayResults(UserQuery  x, AccessRecord record[500])
 {
+   cout << endl;
    cout << "The following records match your criteria:" << endl;
    cout << endl;
    cout << setw(15) << "Timestamp"
-        << setw(35) << "File"
-        << setw(55) << "User" 
+        << setw(20) << "File"
+        << setw(20) << "User" 
         << endl; 
-   cout << "--------------- ------------------- -------------------/n";
-   
-   for(int i = 0; i <= x.fileLength; i++)
+   cout << "--------------- ------------------- -------------------" << endl;
+
+   for(int i = 0; i < 5; i++)
    {
       int tempI = x.results[i];
       cout << setw(15) << record[tempI].timeStamp 
-           << setw(35) << record[tempI].fileName
-           << setw(55) << record[tempI].user
+           << setw(20) << record[tempI].fileName
+           << setw(20) << record[tempI].user
            << endl;
    }
+   
    cout << "End of records" << endl;
-   
-   
-   
-   
    
    return;    
 }    
