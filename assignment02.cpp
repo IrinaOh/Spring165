@@ -18,6 +18,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <fstream>
 using namespace std;
 
 struct AccessRecord {
@@ -29,11 +30,14 @@ struct AccessRecord {
 struct UserQuery {
    long int startTime;
    long int endTime;
-   char accessFile[256];   
+   char accessFile[256]; 
+   int fileLength;     
 };
 
  void filePrompt(UserQuery & x);
  void timePrompt(UserQuery & x);
+ void readFile(UserQuery & x, AccessRecord & y);
+ void fileSearch(UserQuery x, AccessRecord y);
  
 /**********************************************************************
  * Function: main
@@ -41,11 +45,13 @@ struct UserQuery {
  ***********************************************************************/
 int main()
 {
- UserQuery c1;
+ UserQuery uQ1; //uQ1 is user query one. 
+ AccessRecord record[500];
    
-   filePrompt(c1);
-   timePrompt(c1);
-   
+   filePrompt(uQ1);
+   timePrompt(uQ1);
+   readFile(uQ1, record);
+   void fileSearch(uQ1, record);
    return 0;
 }
 
@@ -60,6 +66,7 @@ int main()
     
     return;
  }
+ 
  /**********************************************************************
  * Function: timePrompt
  * Purpose: Prompts the user for a start and end timestamp.
@@ -73,14 +80,46 @@ int main()
     
     return;
  }
+ 
+ /**********************************************************************
+ * Function: readFile
+ * Purpose: Reads file provides by user
+ ***********************************************************************/
+ void readFile(UserQuery & x, AccessRecord & y)
+ {
+    int i = 0;
+    ifstream fin(x.accessFile);  
+    if (fin.fail()) // check to see if the file correctly opened 
+    return; 
+    // fetch the data int data; 
+    while (!fin.eof())
+    {
+      fin >> y[i].timeStamp;
+      fin >> y[i].filename;
+      fin >> y[i].user;
+      i++;
+      x.fileLength = i; 
+    }
+                 
+    // close the file 
+    fin.close(); 
+    
+  return;
+ }
+ 
  /**********************************************************************
  * Function: fileSearch
  * Purpose: Searches and returns files that were accessed between 
  * start and end time stamps. 
  ***********************************************************************/
- void fileSearch()
+ void fileSearch(UserQuery x, AccessRecord y)
  {
-    
+    for(int i = 0; i < 500; i++){
+       if ( x.startTime <= y[i].timeStamp && x.endTime >= y[i].timeStamp )
+      {
+         
+      };
+    };
     return;
  }
  
