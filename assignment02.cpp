@@ -31,13 +31,14 @@ struct UserQuery {
    long int startTime;
    long int endTime;
    char accessFile[256]; 
-   int fileLength;     
+   int fileLength; 
+   int results[500];    
 };
 
  void filePrompt(UserQuery & x);
  void timePrompt(UserQuery & x);
  void readFile(UserQuery & x, AccessRecord record[500]);
- void fileSearch(UserQuery x, AccessRecord record[500]);
+ void fileSearch(UserQuery & x, AccessRecord record[500]);
  
 /**********************************************************************
  * Function: main
@@ -63,7 +64,7 @@ int main()
  {
     cout << "Enter the access record file: ";
     cin >> x.accessFile;
-    
+    cout << endl;
     return;
  }
  
@@ -112,12 +113,13 @@ int main()
  * Purpose: Searches and returns files that were accessed between 
  * start and end time stamps. 
  ***********************************************************************/
- void fileSearch(UserQuery x, AccessRecord record[500])
+ void fileSearch(UserQuery & x, AccessRecord record[500])
  {
     for(int i = 0; i < x.fileLength; i++){
-       if ( x.startTime <= record[i].timeStamp && x.endTime >= record[i].timeStamp )
+       if ( x.startTime <= record[i].timeStamp && x.endTime >= record[i].timeStamp)
       {
-         
+         int j = 0;
+         x.results[j] = i;
       };
     };
     return;
@@ -127,8 +129,29 @@ int main()
  * Function: displayResults
  * Purpose: Displays results from search.
  ***********************************************************************/
- void displayResults()
+ void displayResults(UserQuery & x, AccessRecord record[500])
 {
+   cout << "The following records match your criteria:" << endl;
+   cout << endl;
+   cout << setw(15) << "Timestamp"
+        << setw(35) << "File"
+        << setw(55) << "User" 
+        << endl; 
+   cout << "--------------- ------------------- -------------------/n";
+   
+   for(int i = 0; i <= x.fileLength; i++)
+   {
+      int tempI = x.results[i];
+      cout << setw(15) << record[tempI].timeStamp 
+           << setw(35) << record[tempI].fileName
+           << setw(55) << record[tempI].user
+           << endl;
+   }
+   cout << "End of records" << endl;
+   
+   
+   
+   
    
    return;    
 }    
