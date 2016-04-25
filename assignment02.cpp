@@ -36,7 +36,7 @@ struct UserQuery {
 
  void filePrompt(UserQuery & x);
  void timePrompt(UserQuery & x);
- void readFile(UserQuery & x, AccessRecord & record[500]);
+ void readFile(UserQuery & x, AccessRecord record[500]);
  void fileSearch(UserQuery x, AccessRecord record[500]);
  
 /**********************************************************************
@@ -85,7 +85,7 @@ int main()
  * Function: readFile
  * Purpose: Reads file provides by user
  ***********************************************************************/
- void readFile(UserQuery & x, AccessRecord & record[500])
+ void readFile(UserQuery & x, AccessRecord record[500])
  {
     int i = 0;
     ifstream fin(x.accessFile);  
@@ -95,7 +95,7 @@ int main()
     while (!fin.eof())
     {
       fin >> record[i].timeStamp;
-      fin >> record[i].filename;
+      fin >> record[i].fileName;
       fin >> record[i].user;
       i++;
       x.fileLength = i; 
