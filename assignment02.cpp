@@ -36,8 +36,8 @@ struct UserQuery {
 
  void filePrompt(UserQuery & x);
  void timePrompt(UserQuery & x);
- void readFile(UserQuery & x, AccessRecord & y);
- void fileSearch(UserQuery x, AccessRecord y);
+ void readFile(UserQuery & x, AccessRecord & record[500]);
+ void fileSearch(UserQuery x, AccessRecord record[500]);
  
 /**********************************************************************
  * Function: main
@@ -51,7 +51,7 @@ int main()
    filePrompt(uQ1);
    timePrompt(uQ1);
    readFile(uQ1, record);
-   void fileSearch(uQ1, record);
+   fileSearch(uQ1, record);
    return 0;
 }
 
@@ -85,7 +85,7 @@ int main()
  * Function: readFile
  * Purpose: Reads file provides by user
  ***********************************************************************/
- void readFile(UserQuery & x, AccessRecord & y)
+ void readFile(UserQuery & x, AccessRecord & record[500])
  {
     int i = 0;
     ifstream fin(x.accessFile);  
@@ -94,9 +94,9 @@ int main()
     // fetch the data int data; 
     while (!fin.eof())
     {
-      fin >> y[i].timeStamp;
-      fin >> y[i].filename;
-      fin >> y[i].user;
+      fin >> record[i].timeStamp;
+      fin >> record[i].filename;
+      fin >> record[i].user;
       i++;
       x.fileLength = i; 
     }
@@ -112,10 +112,10 @@ int main()
  * Purpose: Searches and returns files that were accessed between 
  * start and end time stamps. 
  ***********************************************************************/
- void fileSearch(UserQuery x, AccessRecord y)
+ void fileSearch(UserQuery x, AccessRecord record[500])
  {
-    for(int i = 0; i < 500; i++){
-       if ( x.startTime <= y[i].timeStamp && x.endTime >= y[i].timeStamp )
+    for(int i = 0; i < x.fileLength; i++){
+       if ( x.startTime <= record[i].timeStamp && x.endTime >= record[i].timeStamp )
       {
          
       };
