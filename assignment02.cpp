@@ -121,10 +121,11 @@ int main()
  ***********************************************************************/
  void fileSearch(UserQuery & x, AccessRecord record[500])
  {
-    for(int i = 0; i < x.fileLength; i++){
+         int j = 0;
+    for(int i = 0; i < x.fileLength; i++)
+    {
        if ( x.startTime <= record[i].timeStamp && x.endTime >= record[i].timeStamp)
        {
-         int j = 0;
          x.results[j] = i;
          j++;
        }
@@ -147,7 +148,7 @@ int main()
         << endl; 
    cout << "--------------- ------------------- -------------------" << endl;
 
-   for(int i = 0; i < 5; i++)
+   for(int i = 0; i < x.fileLength; i++)
    {
       int tempI = x.results[i];
       cout << setw(15) << record[tempI].timeStamp 
