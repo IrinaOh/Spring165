@@ -19,6 +19,7 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <string>
 using namespace std;
 
 struct AccessRecord 
@@ -32,7 +33,7 @@ struct UserQuery
 {
    long int startTime;
    long int endTime;
-   char accessFile[256]; 
+   string accessFile; 
    int fileLength; 
    int results[500];
    int numOfResults;    
@@ -59,6 +60,7 @@ int main()
    fileSearch(uQ1, record);
    displayResults(uQ1, record);
   
+   system("pause");
    return 0;
 }
 
@@ -101,7 +103,7 @@ void readFile(UserQuery &x, AccessRecord record[500])
       cout << "Unable to open: " << x.accessFile << endl;
       return; 
    }
-   char text[256];
+   
    while (!fin.eof())
    {   
       fin >> record[i].fileName;
