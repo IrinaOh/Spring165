@@ -21,7 +21,8 @@ int main()
 {
 	try
 	{
-		cout << prompt() << endl;
+		int number = prompt();
+		cout << "The number is " << number << "." << endl;
 	}
 	catch (const char * message)
 	{
@@ -29,7 +30,7 @@ int main()
 	}
    
    
-   system("pause");
+   //system("pause");
    return 0;
 }
 
@@ -45,15 +46,15 @@ int prompt() throw (const char *)
 	cin >> userNum;
 	if (userNum < 0)
 	{
-		throw "negative";
+		throw "negative.";
 	}
 	if (userNum > 100)
 	{
-		throw "greater than 100";
+		throw "greater than 100.";
 	}
-	if (!userNum%2 == 0)
+	if (userNum%2)
 	{
-		throw "odd";
+		throw "odd.";
 	}
 	return userNum;
 }
