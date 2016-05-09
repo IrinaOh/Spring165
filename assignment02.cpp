@@ -137,7 +137,6 @@ void fileSearch(UserQuery &x, AccessRecord record[500])
    x.numOfResults = j;
    return;
 }
- 
 /**********************************************************************
  * Function: displayResults
  * Purpose: Displays results from search.
