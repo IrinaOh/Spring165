@@ -8,8 +8,19 @@
 
 // put your class definition here
 // along with the data members, and method prototypes
+class Date
+{
+   public:
+   void set(int x, int y, int z)
+   displayAmerican();
+   displayEuropean();
+   displayISO();
 
-
-
+   private:
+   int month;
+   int day;
+   int year;
+      
+};
 
 #endif
