@@ -10,6 +10,9 @@ using namespace std;
 
 int main()
 {
+     int month;
+   int day;
+   int year;
    // prompt for month, day, year
    cout << "Month: ";
    cin >> month;
@@ -17,6 +20,7 @@ int main()
    cin >> day;
    cout << "Year: ";
    cin >> year;
+   cout << endl;
    // create a Date object
    Date myDate;
    // set its values

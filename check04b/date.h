@@ -11,10 +11,10 @@
 class Date
 {
    public:
-   void set(int x, int y, int z)
-   displayAmerican();
-   displayEuropean();
-   displayISO();
+   void set(int x, int y, int z);
+   void displayAmerican();
+   void displayEuropean();
+   void displayISO();
 
    private:
    int month;

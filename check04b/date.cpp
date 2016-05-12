@@ -3,6 +3,8 @@
  * Purpose: Holds the implementation of the Date class methods.
  ********************************************************************/
 #include "date.h"
+#include <iostream>
+using namespace std;
 
 // Put your method bodies here...
 void Date::set(int x, int y, int z)
@@ -22,19 +24,19 @@ void Date::displayAmerican()
 }
 void Date::displayEuropean()
 {
-   cout << month 
+   cout  << day 
          << "/"
-         << day
+         << month
          << "/"
          << year
          << endl; 
 }
 void Date::displayISO()
 {
-   cout << month 
-         << "/"
+   cout << year
+         << "-"
+         << month
+         << "-"
          << day
-         << "/"
-         << year
          << endl; 
 }
