@@ -1,6 +1,6 @@
 /***************************************************************
  * File: ta04.cpp
- * Author: (your name here)
+ * Author: Edgar Wright
  * Purpose: Contains the main function to test the Rational class.
  ***************************************************************/
 
@@ -13,13 +13,14 @@ using namespace std;
 int main()
 {
    // Declare your Rational object here
-   
+   Rational rational;
 
    // Call your prompt function here
-
+   rational.prompt();
 
    // Call your display functions here
-
-
+   rational.display();
+   rational.displayDecimal();
+   
    return 0;
 }

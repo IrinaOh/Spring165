@@ -1,9 +1,9 @@
 ###############################################################
 # Program:
 #     Team Activity 04, Classes
-#     Brother {Burton, Falin, Ercanbrack}, CS165
+#     Brother McCracken, CS165
 # Author:
-#     your name here
+#     Edgar Wright
 # Summary:
 #     Put your summary code here... 
 ###############################################################
