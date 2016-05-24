@@ -13,9 +13,12 @@ class Product
 {
     public: 
     void prompt();
-    void displayAd();
-    void displayInv();
+    void displayAdvertising();
+    void displayInventory();
     void displayReceipt();  
+    
+    Product :: Product();
+    Product :: Product(string n, string d, double w, double bP);
     
     //Getters
     string getName() const { return name; }
@@ -49,6 +52,7 @@ class Product
     double basePrice;
     double weight;
     string description;
+    
     double shipCost;
     double salesTax;
     

@@ -15,6 +15,9 @@ class Customer
   void prompt();
   void display() const;
   
+  Customer :: Customer();
+  Customer :: Customer(string n, Address a);
+  
   //Getters
   string getName() const { return name; }
   Address getAddress() const { return address; }

@@ -18,9 +18,14 @@ using namespace std;
   }
   void Order :: displayShippingLabel()
   {
-      cout << name << endl;
-      cout << street << endl;
-      cout << city << ", " << state << " " << zip << endl;
+      customer.display();
+      return;
+  }
+  
+  void Order :: displayReceipt()
+  {
+      customer.display();
+      product.displayReceipt();
       return;
   }
   
