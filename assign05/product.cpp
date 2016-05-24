@@ -13,56 +13,56 @@ using namespace std;
 void Product :: prompt()
 {
       cout << "Enter name: "; 
-      getline(cin, productName);
+      getline(cin, name);
       cout << "Enter description: ";
-      getline(cin, productDescription);
+      getline(cin, description);
       cout << "Enter weight: ";
-      cin >> productWeight;
+      cin >> weight;
    do
    {
       cout << "Enter price: ";
-      cin >> productPrice;
+      cin >> basePrice;
       if (cin.fail())
       {
          cin.clear(); // clear the error state 
          cin.ignore(256, '\n');
-         productPrice = -1;
+         basePrice = -1;
       }
    }
-   while (productPrice < 0);
+   while (basePrice < 0);
    return;    
 }
 
  void Product :: getSalesTax()
  {
-    salesTax = productPrice * .06;
+    salesTax = basePrice * .06;
  }
  
  void Product :: getShippingCost()
  {
-    if (productWeight < 5)
+    if (weight < 5)
     {
        shipCost = 2;
     }
     else
     {
-       shipCost = 2 + (productWeight - 5)*.1;
+       shipCost = 2 + (weight - 5)*.1;
     }
  }
  
 
 
-void Product :: displayAd()
+void Product :: displayAdvertising()
 {
-   cout << productName << " - " << "$" << productPrice << endl;
-   cout << "(" << productDescription << ")" << endl;
+   cout << name << " - " << "$" << basePrice << endl;
+   cout << "(" << description << ")" << endl;
    return;     
 }
 
-void Product :: displayInv()
+void Product :: displayInventory()
 {
-   cout << "$" << productPrice << " - " << productName; 
-   cout << " - " << productWeight << " lbs" << endl;
+   cout << "$" << basePrice << " - " << name; 
+   cout << " - " << weight << " lbs" << endl;
         
    return;
 }
@@ -76,10 +76,10 @@ void Product :: displayReceipt()
    getSalesTax();
    getShippingCost();
    
-   cout << productName << "\n"
+   cout << name << "\n"
         << "  Price:" 
         << setw(10) << "$"
-        << setw(8) << productPrice << "\n";
+        << setw(8) << basePrice << "\n";
    cout << "  Sales tax:"
         << setw(6) << "$"
         << setw(8) << salesTax << endl;
@@ -88,7 +88,24 @@ void Product :: displayReceipt()
         << setw(8) << shipCost << endl;
    cout << "  Total:"
         << setw(10) << "$"
-        << setw(8) << productPrice + salesTax + shipCost << endl;
+        << setw(8) << basePrice + salesTax + shipCost << endl;
    
    return;
+}
+
+// Constructors 
+Product :: Product()
+{
+      name = "none";
+      description = "";
+      weight = 0;
+      basePrice = 0;      
+}
+
+Product :: Product(string n, string d, double w, double bP)
+{
+      name = n;
+      description = d;
+      weight = w;
+      basePrice = bP;
 }

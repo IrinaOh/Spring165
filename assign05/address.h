@@ -2,7 +2,8 @@
 
 #ifndef ADDRESS_H
 #define ADDRESS_H
-
+#include <iostream>
+using namespace std;
 // Put your Address class here
 class Address
 {
@@ -39,7 +40,7 @@ public:
    
    void setZip(string z)
    {
-      street = z;
+      zip = z;
    }
    
 private:

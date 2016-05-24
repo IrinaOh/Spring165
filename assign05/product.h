@@ -16,12 +16,39 @@ class Product
     void displayAd();
     void displayInv();
     void displayReceipt();  
-  
+    
+    //Getters
+    string getName() const { return name; }
+    string getDescription() const { return description; }
+    double getBasePrice() const { return basePrice; }
+    double getWeight() const { return weight; }
+    
+    //Setters
+    void setName(string n)
+    {
+        name = n;
+    }
+    
+    void setDescription(string d)
+    {
+        description = d;
+    }
+     
+     void setBasePrice(double bP)
+     {
+         basePrice = bP;
+     }
+     
+     void setWeight(double w)
+     {
+         weight = w;
+     }
+     
     private:
-    string productName;
-    double productPrice;
-    double productWeight;
-    string productDescription;
+    string name;
+    double basePrice;
+    double weight;
+    string description;
     double shipCost;
     double salesTax;
     
