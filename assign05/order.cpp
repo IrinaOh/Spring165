@@ -1,21 +1,26 @@
 // File: order.cpp
 
 #include "order.h"
+#include "address.h"
 using namespace std;
 
 // Put your the method bodies for your order class here
 // Methods
   string Order :: getShippingZip()
   {
+      Address address;
       string zip;
-      zip = Address.zip;
+      address = customer.getAddress();
+      zip = address.getZip();
       return zip;
   }
+  
   double Order :: getTotalPrice()
   {
    
    return 5;   
   }
+  
   void Order :: displayShippingLabel()
   {
       customer.display();
@@ -32,8 +37,7 @@ using namespace std;
   // Constructors
   Order :: Order()
   {
-      quantity = 0;
-      
+      quantity = 0;      
   }
   
   Order :: Order(Product p, int q, Customer c)

@@ -13,13 +13,13 @@ using namespace std;
 class Order
 {
   public:
-  void getShippingZip();
-  void getTotalPrice();
+  string getShippingZip();
+  double getTotalPrice();
   void displayShippingLabel();
   void displayReceipt();
   
-  Order :: Order();
-  Order :: Order(Product p, int q, Customer c);
+  Order();
+  Order(Product p, int q, Customer c);
   
   // Getters
   Product getProduct() const { return product; }

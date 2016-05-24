@@ -14,8 +14,7 @@ using namespace std;
    void Customer :: display() const
    {
       cout << name << endl; 
-      cout << street << endl;
-      cout << city << "," << state << " " << zip << endl;
+      address.display();
       
       return;
    }

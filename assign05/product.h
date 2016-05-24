@@ -17,8 +17,8 @@ class Product
     void displayInventory();
     void displayReceipt();  
     
-    Product :: Product();
-    Product :: Product(string n, string d, double w, double bP);
+    Product();
+    Product(string n, string d, double w, double bP);
     
     //Getters
     string getName() const { return name; }
