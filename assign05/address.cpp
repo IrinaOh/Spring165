@@ -22,7 +22,7 @@ using namespace std;
    void Address :: display() const
    {
       cout << street << endl;
-      cout << city << "," << state << " " << zip << endl;
+      cout << city << ", " << state << " " << zip << endl;
       
       return;
    }

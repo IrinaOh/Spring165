@@ -17,8 +17,10 @@ using namespace std;
   
   double Order :: getTotalPrice()
   {
+      double total;
+      total = product.getTotalPrice() * quantity; 
    
-   return 5;   
+   return total;   
   }
   
   void Order :: displayShippingLabel()
@@ -37,7 +39,8 @@ using namespace std;
   // Constructors
   Order :: Order()
   {
-      quantity = 0;      
+      quantity = 0; 
+        
   }
   
   Order :: Order(Product p, int q, Customer c)

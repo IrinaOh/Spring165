@@ -33,13 +33,16 @@ void Product :: prompt()
    return;    
 }
 
- void Product :: getSalesTax()
+ double Product :: getSalesTax()
  {
-    salesTax = basePrice * .06;
+       double tax;
+    tax = basePrice * .06;
+    return tax;
  }
  
- void Product :: getShippingCost()
+ double Product :: getShippingCost()
  {
+    double shipCost;   
     if (weight < 5)
     {
        shipCost = 2;
@@ -48,9 +51,17 @@ void Product :: prompt()
     {
        shipCost = 2 + (weight - 5)*.1;
     }
+    return shipCost;
  }
  
-
+double Product :: getTotalPrice()
+{
+      double total;
+      
+      total = basePrice + getShippingCost() + getSalesTax();
+      cout << getShippingCost() << " " << getSalesTax() << endl;
+      return total;
+}
 
 void Product :: displayAdvertising()
 {
@@ -99,7 +110,7 @@ Product :: Product()
       name = "none";
       description = "";
       weight = 0;
-      basePrice = 0;      
+      basePrice = 0.00;      
 }
 
 Product :: Product(string n, string d, double w, double bP)

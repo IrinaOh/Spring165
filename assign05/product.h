@@ -16,6 +16,7 @@ class Product
     void displayAdvertising();
     void displayInventory();
     void displayReceipt();  
+    double getTotalPrice();
     
     Product();
     Product(string n, string d, double w, double bP);
@@ -56,9 +57,8 @@ class Product
     double shipCost;
     double salesTax;
     
-    void getSalesTax();
-    void getShippingCost();
-    void getTotalPrice();
+    double getSalesTax();
+    double getShippingCost();
     
 }; 
 #endif
