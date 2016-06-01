@@ -31,7 +31,8 @@ float IceCream::getTotalPrice() const
 {
    // TODO: Change this to include sales tax
 
-   return price;
+   
+   return (price*salesTax) + price;
 }
 
 /**********************************************************************

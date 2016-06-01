@@ -35,6 +35,7 @@ public:
    void setY(float y);
    void addX(float dx)      { setX(getX() + dx);     }
    void addY(float dy)      { setY(getY() + dy);     }
+ 
 
 private:
    float x;           // horizontal position

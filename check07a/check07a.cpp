@@ -12,6 +12,7 @@ using namespace std;
  * Function: Main
  * Purpose: Tests the Ice Cream class
  *****************************************/
+float IceCream :: salesTax = .06;
 
 int main()
 {
@@ -31,7 +32,8 @@ int main()
    cin >> tax;
 
    // TODO: Set the sales tax static member variable here
-
+   iceCream1.setSalesTax(tax);
+   iceCream2.setSalesTax(tax);
 
 
    cout << "\nMenu:\n";

@@ -1,11 +1,12 @@
 ###############################################################
 # Program:
 #     Milestone 06, Moon Lander
-#     Brother {Burton, Falin, Ercanbrack}, CS165
+#     Brother McCracken, CS165
 # Author:
-#     your name here
+#     Edgar Wright
 # Summary:
-#     Put your summary code here... 
+#     This program will allow a user to hone the skills
+#	  needed to land a lunar lander on a platform 
 # Above and Beyond
 #     When you submit your final project (not for milestones),
 #     list anything here that you did to go above and beyond
@@ -18,7 +19,7 @@ LFLAGS = -lglut -lGLU -lGL
 ###############################################################
 # Build the main Moon Lander game
 ###############################################################
-a.out: driver.o ground.o game.o uiInteract.o uiDraw.o point.o
+a.out: velocity.o lander.o driver.o ground.o game.o uiInteract.o uiDraw.o point.o
 	g++ driver.o ground.o game.o uiInteract.o uiDraw.o point.o $(LFLAGS)
 	tar -j -cf moonLander.tar makefile *.h *.cpp
 
@@ -30,6 +31,12 @@ a.out: driver.o ground.o game.o uiInteract.o uiDraw.o point.o
 #    ground.o      Handles the ground / world
 #    game.o        Handles the game interaction
 ###############################################################
+velocity.o: velocity.cpp velocity.h
+	g++ -c velocity.cpp
+
+lander.o: lander.cpp lander.h
+	g++ -c lander.cpp
+
 uiDraw.o: uiDraw.cpp uiDraw.h
 	g++ -c uiDraw.cpp
 

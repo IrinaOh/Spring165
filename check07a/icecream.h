@@ -15,6 +15,18 @@ private:
 public:
    IceCream();
    IceCream(std::string flavor, float price);
+   
+   static float salesTax;
+   
+   float getSalesTax() 
+   {
+       return salesTax;
+   }
+   
+   void setSalesTax(float sT)
+   {
+       salesTax = sT;
+   }
 
    float getTotalPrice() const;
    void prompt();
