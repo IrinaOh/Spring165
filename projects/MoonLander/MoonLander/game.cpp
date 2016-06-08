@@ -135,6 +135,6 @@ void Game :: draw(const Interface & ui)
    drawNumber(fuelLocation, lander.getFuel());
 
    // draw ground
-   ground.draw();
+    ground.draw();
 }
 

@@ -299,7 +299,20 @@ void drawLanderFlames(const Point & point,
    
    // draw it
    glBegin(GL_LINE_LOOP);
-   glColor3f(1.0 /* red % */, 0.0 /* green % */, 0.0 /* blue % */);
+   if (bottom)
+   {
+		glColor3f(0.0, 0.5, 1.0);
+   };
+
+   if (right)
+   {
+	   glColor3f(0.0 /* red % */, 1.0 /* green % */, 0.0 /* blue % */);
+   };
+
+   if (left)
+   {
+	   glColor3f(1.0 /* red % */, 1.0 /* green % */, 0.0 /* blue % */);
+   };
    
    // bottom thrust
    if (bottom)

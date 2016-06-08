@@ -19,6 +19,7 @@ void Lander::draw()
 {
 	drawLander(lP);
 }
+
 /**********************************************************************
 * Function: applyGravity()
 * Purpose: Applys gravity to the lander.

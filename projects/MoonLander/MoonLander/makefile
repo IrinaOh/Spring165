@@ -1,6 +1,6 @@
 ###############################################################
 # Program:
-#     Milestone 06, Moon Lander
+#     Project 07, Moon Lander
 #     Brother McCracken, CS165
 # Author:
 #     Edgar Wright

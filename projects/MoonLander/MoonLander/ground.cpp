@@ -68,9 +68,19 @@ void Ground :: draw() const
    pt2.setX(pt1.getX());
    for (int i = 0; i < PLATFORM; i += 5)
    {
-      drawLine(pt1, pt2, 1.0 /*red*/, 1.0 /*green*/, 0 /*blue*/);
-      pt1.addX(5);
-      pt2.addX(5);
+	   if (i%2 == 0)
+	   {
+			drawLine(pt1, pt2, random(0.5, 1.0) /*red*/, 0.0 /*green*/, 0 /*blue*/);
+			pt1.addX(5);
+			pt2.addX(5);
+	   }
+	   else
+	   {
+		   drawLine(pt1, pt2, 0.0 /*red*/, random(0.5, 1.0) /*green*/, 0 /*blue*/);
+		   pt1.addX(5);
+		   pt2.addX(5);
+	   }
+  
    }
 
    // draw the ground now
@@ -78,7 +88,7 @@ void Ground :: draw() const
    {
       Point ptBottom(topLeft.getX() + i, bottomRight.getY());
       Point ptTop   (topLeft.getX() + i, ground[i]);
-      drawLine(ptBottom, ptTop, 0.9 /*red*/, 0.9 /*green*/, 0.9 /*blue*/);
+      drawLine(ptBottom, ptTop, 0.0 /*red*/, 0.9 /*green*/, 0.5 /*blue*/);
    }
    
 }
