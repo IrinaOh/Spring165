@@ -1,9 +1,9 @@
 /***********************************************************************
 * Program:
 *    Checkpoint 09a, Virtual Functions
-*    Brother {Burton, Falin, Ercanbrack}, CS165
+*    Brother McCracken, CS165
 * Author:
-*    your name
+*    Edgar Wright
 * Summary: 
 *    Summaries are not necessary for checkpoint assignments.
 * ***********************************************************************/
@@ -16,6 +16,66 @@ using namespace std;
 // in this file.
 
 // TODO: Define your classes here
+class Car
+{   
+    protected:
+    string name;
+
+    public:
+    string getName() { return name; };
+    void setName(string n) { name = n; };
+    
+    virtual string getDoorSpecs()
+    {
+        return "Unknown doors";
+    }
+
+    Car(string n)
+    {
+        setName(n);
+    }
+
+};
+
+
+class Civic : public Car
+{
+    public:
+    Civic() : Car("Civic") {}; 
+
+    virtual string getDoorSpecs()
+    {
+        return "4 doors";
+    }
+
+};
+
+
+
+class Odyssey : public Car
+{
+    public:
+    Odyssey() : Car("Odyssey") {};
+    
+    virtual string getDoorSpecs()
+    {
+        return "2 front doors, 2 sliding doors, 1 tail gate";
+    }
+};
+
+
+
+class Ferrari : public Car
+{
+    public:
+    Ferrari() : Car("Ferrari") {};
+
+    virtual string getDoorSpecs()
+    {
+        return "2 butterfly doors";
+    }
+};
+
 
 
 /**********************************************************************
@@ -25,7 +85,10 @@ using namespace std;
  ***********************************************************************/
 
 // TODO: Include your attachDoors function here
-
+void attachDoors(Car &c)
+{
+    cout << "Attaching doors to " << c.getName() << " - " << c.getDoorSpecs() << endl;
+}
 
 /**********************************************************************
  * Function: main
