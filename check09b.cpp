@@ -103,7 +103,7 @@ int main()
    
    // TODO: 1. Declare your array here
    // For this assignment you can use the size: MAX_SIZE
-   Shape * array[MAX_SIZE];
+   Shape* array[MAX_SIZE];
    char letter;
    int count = 0;
 
@@ -120,7 +120,7 @@ int main()
 
          // TODO: 2. Create your circle object here, set the radius value
          // and add it to the array at index "count".
-         Circle circle;
+         Circle* circle = new Circle;
          circle.setRadius(radius);
 
         array[count] = &circle;         
@@ -141,7 +141,7 @@ int main()
       
          // TODO: 3. Create your rectangle object here, set the length and
          // width, and add it to the array at index "count".
-         Rectangle rectangle;
+         Rectangle* rectangle = new Rectangle;
          rectangle.setLength(length);
          rectangle.setWidth(width);
 
