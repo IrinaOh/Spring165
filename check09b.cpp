@@ -47,7 +47,7 @@ public:
    // TODO: Implement a constructor here
    Circle()
    {
-       name = "Circle";
+       setName("Circle");
    }
 
    // TODO: Redefine getArea() here
@@ -78,7 +78,7 @@ public:
    // TODO: Implement a constructor here
    Rectangle()
    {
-       name = "Rectangle";
+       setName("Rectangle");
    }
 
    // TODO: Redefine getArea() here
@@ -103,7 +103,7 @@ int main()
    
    // TODO: 1. Declare your array here
    // For this assignment you can use the size: MAX_SIZE
-   Shape array[MAX_SIZE];
+   Shape * array[MAX_SIZE];
    char letter;
    int count = 0;
 
@@ -123,7 +123,7 @@ int main()
          Circle circle;
          circle.setRadius(radius);
 
-        array[count] = circle;         
+        array[count] = &circle;         
 
          
          count++; // we have seen another shape
@@ -145,7 +145,7 @@ int main()
          rectangle.setLength(length);
          rectangle.setWidth(width);
 
-         array[count] = rectangle;
+         array[count] = &rectangle;
 
          count++; // we have seen another shape
       }
@@ -162,13 +162,15 @@ int main()
    {
       // TODO: 4. Add a cout statment here to display the name and the area
       // of each shape in the list in the format "Circle - 10.32"
-      cout << array[count].getname() << " - " << array[count].getArea() << endl;
+      cout << array[i]->getName() << " - " << array[i]->getArea() << endl;
 
    }
 
-   // TODO: 5. Loop through and free the memory of each object.
-   
-
+   //TODO: 5. Loop through and free the memory of each object.
+    for (int i = 0; i < count; i++)
+   {
+       delete array[i];
+   }
    return 0;
 }
 
