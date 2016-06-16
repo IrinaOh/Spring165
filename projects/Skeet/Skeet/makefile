@@ -18,8 +18,8 @@ LFLAGS = -lglut -lGLU -lGL
 ###############################################################
 # Build the main game
 ###############################################################
-a.out: driver.o game.o uiInteract.o uiDraw.o point.o rifle.o 
-	g++ driver.o game.o uiInteract.o uiDraw.o point.o rifle.o $(LFLAGS)
+a.out: driver.o game.o uiInteract.o uiDraw.o point.o rifle.o birds.o bullet.o
+	g++ driver.o game.o uiInteract.o uiDraw.o point.o rifle.o birds.o bullet.o $(LFLAGS)
 
 ###############################################################
 # Individual files
@@ -52,7 +52,11 @@ rifle.o: rifle.h point.h uiDraw.h rifle.cpp
 #
 # Then, don't forget to add them to the dependecy list for a.out above.
 #######################################################################
+birds.o: birds.h
+	g++ -c birds.cpp
 
+bullet.o bullet.h
+	g++ -c bullet.cpp
 
 ###############################################################
 # General rules

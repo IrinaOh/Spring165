@@ -32,7 +32,7 @@ Game :: Game(Point tl, Point br)
    score = 0;
 
    // TODO: Set your bird pointer to a good initial value (e.g., NULL)
-
+   bird = NULL;
 }
 
 /****************************************
@@ -258,10 +258,13 @@ void Game :: handleInput(const Interface & ui)
 void Game :: draw(const Interface & ui)
 {
    // draw the bird
-
+	bird->draw();
    // TODO: Check if you have a valid bird and if it's alive
    // then call it's draw method
-   
+	if (bird != NULL && bird->isAlive())
+	{
+		bird->draw();
+   }
   
 
    // draw the rifle
