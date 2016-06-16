@@ -19,41 +19,6 @@ public:
 	Bullet();
 	~Bullet();
 
-	/*********************************************
-	* Function: getPoint
-	* Description: returns the bullet's location
-	*********************************************/
-	Point getPoint();
-
-	/*********************************************
-	* Function: getVelocity
-	* Description: returns the bullet's velocity
-	*********************************************/
-	Velocity getVelocity();
-
-	/*********************************************
-	* Function: isAlive
-	* Description: Returns if the bullet is alive
-	*********************************************/
-	bool isAlive();
-
-	/*********************************************
-	* Function: setPoint
-	* Description: Sets the bullet's point
-	*********************************************/
-	void setPoint(Point p);
-
-	/*********************************************
-	* Function: setVelocity
-	* Description: Sets the bullet's velocity
-	*********************************************/
-	void setVelocity(Velocity v);
-
-	/*********************************************
-	* Function: kill
-	* Description: kills the bullet
-	*********************************************/
-	void kill();
 
 	/*********************************************
 	* Function: advance

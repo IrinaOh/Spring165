@@ -20,32 +20,6 @@ Bird::~Bird()
 {
 }
 
-Point Bird::getPoint()
-{
-	return Point();
-}
-
-Velocity Bird::getVelocity()
-{
-	return Velocity();
-}
-
-bool Bird::isAlive()
-{
-	return false;
-}
-
-void Bird::setPoint(Point p)
-{
-}
-
-void Bird::setVelocity(Velocity v)
-{
-}
-
-void Bird::kill()
-{
-}
 
 void Bird::advance()
 {

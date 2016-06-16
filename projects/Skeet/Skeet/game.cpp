@@ -42,7 +42,10 @@ Game :: ~Game()
 {
    // TODO: Check to see if there is currently a bird allocated
    //       and if so, delete it.
-
+	if (bird->isAlive)
+	{
+		delete bird;
+	}
 }
 
 /***************************************

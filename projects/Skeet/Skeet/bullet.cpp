@@ -24,32 +24,6 @@ Bullet::~Bullet()
 {
 }
 
-Point Bullet::getPoint()
-{
-	return Point();
-}
-
-Velocity Bullet::getVelocity()
-{
-	return Velocity();
-}
-
-bool Bullet::isAlive()
-{
-	return false;
-}
-
-void Bullet::setPoint(Point p)
-{
-}
-
-void Bullet::setVelocity(Velocity v)
-{
-}
-
-void Bullet::kill()
-{
-}
 
 void Bullet::advance()
 {

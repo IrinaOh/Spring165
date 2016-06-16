@@ -19,41 +19,7 @@ public:
 	Bird();
 	~Bird();
 
-	/*********************************************
-	* Function: getPoint
-	* Description: returns the bird's location
-	*********************************************/
-	Point getPoint();
-
-	/*********************************************
-	* Function: getVelocity
-	* Description: returns the bird's velocity
-	*********************************************/
-	Velocity getVelocity();
-
-	/*********************************************
-	* Function: isAlive
-	* Description: Returns if the bird is alive
-	*********************************************/
-	bool isAlive();
-
-	/*********************************************
-	* Function: setPoint
-	* Description: Sets the bird's point
-	*********************************************/
-	void setPoint(Point p);
-
-	/*********************************************
-	* Function: setVelocity
-	* Description: Sets the bird's velocity
-	*********************************************/
-	void setVelocity(Velocity v);
-
-	/*********************************************
-	* Function: kill
-	* Description: kills the bird
-	*********************************************/
-	void kill();
+	
 
 	/*********************************************
 	* Function: advance
