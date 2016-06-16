@@ -101,9 +101,9 @@ int main()
    // the focus on the virtual functions and not on passing items
    // between functions.
    
-   // TODO: 1. Declare your array here
+   // TODO: 1. Declare your shapes here
    // For this assignment you can use the size: MAX_SIZE
-   Shape* array[MAX_SIZE];
+   Shape* shapes[MAX_SIZE];
    char letter;
    int count = 0;
 
@@ -119,11 +119,11 @@ int main()
          cin >> radius;
 
          // TODO: 2. Create your circle object here, set the radius value
-         // and add it to the array at index "count".
+         // and add it to the shapes at index "count".
          Circle* circle = new Circle;
-         circle.setRadius(radius);
+         circle->setRadius(radius);
 
-        array[count] = &circle;         
+        shapes[count] = circle;         
 
          
          count++; // we have seen another shape
@@ -140,12 +140,12 @@ int main()
          cin >> width;
       
          // TODO: 3. Create your rectangle object here, set the length and
-         // width, and add it to the array at index "count".
+         // width, and add it to the shapes at index "count".
          Rectangle* rectangle = new Rectangle;
-         rectangle.setLength(length);
-         rectangle.setWidth(width);
+         rectangle->setLength(length);
+         rectangle->setWidth(width);
 
-         array[count] = &rectangle;
+         shapes[count] = rectangle;
 
          count++; // we have seen another shape
       }
@@ -162,14 +162,16 @@ int main()
    {
       // TODO: 4. Add a cout statment here to display the name and the area
       // of each shape in the list in the format "Circle - 10.32"
-      cout << array[i]->getName() << " - " << array[i]->getArea() << endl;
+      cout << shapes[i]->getName() << " - " << shapes[i]->getArea() << endl;
 
    }
 
    //TODO: 5. Loop through and free the memory of each object.
     for (int i = 0; i < count; i++)
    {
-       delete array[i];
+       delete shapes[i];
+
+       shapes[i];
    }
    return 0;
 }
