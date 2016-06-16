@@ -46,6 +46,9 @@
     <ClCompile Include="birds.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="flyingObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -70,6 +73,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="birds.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="flyingObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

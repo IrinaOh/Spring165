@@ -117,6 +117,7 @@
     <ClCompile Include="birds.cpp" />
     <ClCompile Include="bullet.cpp" />
     <ClCompile Include="driver.cpp" />
+    <ClCompile Include="flyingObject.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="point.cpp" />
     <ClCompile Include="rifle.cpp" />
@@ -127,6 +128,7 @@
   <ItemGroup>
     <ClInclude Include="birds.h" />
     <ClInclude Include="bullet.h" />
+    <ClInclude Include="flyingObject.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="point.h" />
     <ClInclude Include="rifle.h" />
