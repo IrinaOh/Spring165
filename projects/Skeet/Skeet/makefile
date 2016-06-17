@@ -52,12 +52,14 @@ rifle.o: rifle.h point.h uiDraw.h rifle.cpp
 #
 # Then, don't forget to add them to the dependecy list for a.out above.
 #######################################################################
-birds.o: birds.h
+birds.o: birds.h point.h uiDraw.h velocity.h flyingObject.h
 	g++ -c birds.cpp
 
-bullet.o bullet.h
+bullet.o bullet.h point.h velocity.h flyingObject.h
 	g++ -c bullet.cpp
 
+flyingObjects.o flyingObjects.h point.h uiDraw.h velocity.h
+	g++ -c flyingObjects.cpp
 ###############################################################
 # General rules
 ###############################################################

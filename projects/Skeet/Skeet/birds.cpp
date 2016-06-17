@@ -12,7 +12,7 @@
 
 
 
-Bird::Bird()
+Bird::Bird(Point p)
 {
 }
 
@@ -21,15 +21,5 @@ Bird::~Bird()
 }
 
 
-void Bird::advance()
-{
-}
 
-void Bird::draw()
-{
-}
 
-int Bird::hit()
-{
-	return 0;
-}

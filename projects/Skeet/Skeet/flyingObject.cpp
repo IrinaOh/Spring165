@@ -3,37 +3,56 @@
 
 // Put your FlyingObject method bodies here
 
-flyingObject::flyingObject()
+FlyingObject::FlyingObject()
 {
 }
 
-flyingObject::~flyingObject()
+FlyingObject::~FlyingObject()
 {
 }
 
-Point flyingObject::getPoint()
+Point FlyingObject::getPoint()
 {
 	return Point();
 }
 
-Velocity flyingObject::getVelocity()
+Velocity FlyingObject::getVelocity()
 {
 	return Velocity();
 }
 
-bool flyingObject::isAlive()
+bool FlyingObject::isAlive()
 {
 	return false;
 }
 
-void flyingObject::setPoint(Point p)
+void FlyingObject::setPoint(Point p)
 {
 }
 
-void flyingObject::setVelocity(Velocity v)
+void FlyingObject::setVelocity(Velocity v)
 {
 }
 
-void flyingObject::kill()
+void FlyingObject::kill()
 {
 }
+
+void FlyingObject::draw()
+{
+}
+
+void FlyingObject::advance()
+{
+}
+
+void FlyingObject::fire(Point point, float angle)
+{
+}
+
+int FlyingObject::hit()
+{
+	return 0;
+}
+
+

@@ -12,32 +12,14 @@
 
 #include "point.h"
 #include "velocity.h"
+#include "flyingObject.h"
 
-class Bullet
+class Bullet : public FlyingObject
 {
 public:
 	Bullet();
 	~Bullet();
 
-
-	/*********************************************
-	* Function: advance
-	* Description: Moves the bullet forward one
-	* step at a time.
-	*********************************************/
-	void advance();
-
-	/*********************************************
-	* Function: draw
-	* Description: draws the bullets
-	*********************************************/
-	void draw();
-
-	/*********************************************
-	* Function: fire
-	* Description: fires the bullets
-	*********************************************/
-	void fire(Point point, float angle);
 
 
 

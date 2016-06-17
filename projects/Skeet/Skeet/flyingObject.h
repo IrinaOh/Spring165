@@ -9,11 +9,11 @@
 #include "uiDraw.h"
 #include "velocity.h"
 
-class flyingObject
+class FlyingObject
 {
 public:
-	flyingObject();
-	~flyingObject();
+	FlyingObject();
+	~FlyingObject();
 
 
 
@@ -53,8 +53,24 @@ void setVelocity(Velocity v);
 *********************************************/
 void kill();
 
+virtual void draw();
+
+virtual void advance();
+
+/*********************************************
+* Function: fire
+* Description: fires the bullets
+*********************************************/
+virtual void fire(Point point, float angle);
+
+/*********************************************
+* Function: hit
+* Description: keeps track of bird hits
+*********************************************/
+virtual int hit();
+
 private:
 
 };
 
-#endif /* flyingObject_h */
+#endif /* FlyingObject_h */

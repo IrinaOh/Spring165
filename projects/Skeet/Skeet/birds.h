@@ -12,33 +12,18 @@
 #include "point.h"
 #include "uiDraw.h"
 #include "velocity.h"
+#include "flyingObject.h"
 
-class Bird
+class Bird : public FlyingObject 
 {
 public:
-	Bird();
+	Bird(Point p);
 	~Bird();
 
 	
 
-	/*********************************************
-	* Function: advance
-	* Description: Moves the bird forward one
-	* step at a time.
-	*********************************************/
-	void advance();
 
-	/*********************************************
-	* Function: draw
-	* Description: draws the birds
-	*********************************************/
-	void draw();
 
-	/*********************************************
-	* Function: hit
-	* Description: keeps track of bird hits
-	*********************************************/
-	int hit();
 
 private:
 

@@ -27,6 +27,7 @@
 #include "bullet.h"
 
 
+
 #define CLOSE_ENOUGH 15
 
 
@@ -75,7 +76,7 @@ private:
    std::vector<Bullet> bullets;
    
    // TODO: declare your bird here (e.g., "Bird * bird;")
-   Bird* bird;
+   Bird * bird;
 
    /*************************************************
     * Private methods to help with the game logic.

@@ -11,6 +11,7 @@
  *************************************************************/
 
 #include "game.h"
+#include "birds.h"
 
 #include "uiDraw.h"
 #include "uiInteract.h"
@@ -134,7 +135,7 @@ Bird* Game :: createBird()
 
    // TODO: Fill this in
    Bird* newBird = new Bird;
-   
+   newBird->setPoint(point);
    return newBird;
 }
 
@@ -198,7 +199,7 @@ void Game :: cleanUpZombies()
       // the bird is dead, but the memory is not freed up yet
       
       // TODO: Clean up the memory used by the bird
-   
+	   delete bird;
    
    }
    

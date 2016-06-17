@@ -25,14 +25,6 @@ Bullet::~Bullet()
 }
 
 
-void Bullet::advance()
-{
-}
 
-void Bullet::draw()
-{
-}
 
-void Bullet::fire(Point point, float angle)
-{
-}
+
