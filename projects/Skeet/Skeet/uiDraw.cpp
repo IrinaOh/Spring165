@@ -471,7 +471,6 @@ void drawDot(const Point & point)
 {
    // Get ready, get set...
    glBegin(GL_POINTS);
-
    // Go...
    glVertex2f(point.getX(),     point.getY()    );
    glVertex2f(point.getX() + 1, point.getY()    );
@@ -524,10 +523,23 @@ void drawToughBird(const Point & center, float radius, int hits)
    // draw the score in the center
    if (hits > 0 && hits < 10)
    {
-      glColor3f(0.0 /* red % */, 0.0 /* green % */, 0.0 /* blue % */);
+	   if (hits == 3)
+	   {
+		   glColor3f(0.0 /* red % */, 0.0 /* green % */, 1.0 /* blue % */);
+	   }
+	   else if (hits == 2)
+	   {
+		   glColor3f(1.0 /* red % */, 0.0 /* green % */, 1.0 /* blue % */);
+	   }
+	   else
+	   {
+		   glColor3f(0.0 /* red % */, 1.0 /* green % */, 0.0 /* blue % */);
+	   }
+    
       glRasterPos2f(center.getX() - 4, center.getY() - 3);
       glutBitmapCharacter(GLUT_BITMAP_8_BY_13, (char)(hits + '0'));
-      glColor3f(1.0, 1.0, 1.0); // reset to white
+      
+	  glColor3f(1.0, 1.0, 1.0); // reset to white
    }
 }
 
@@ -562,7 +574,7 @@ void drawSacredBird(const Point & center, float radius)
    }
    
    // complete drawing
-   glColor3f(1.0, 1.0, 1.0); // reset to white
+   glColor3f(1.0, 0.0, 0.0); // reset to white
    glEnd();   
 }
 

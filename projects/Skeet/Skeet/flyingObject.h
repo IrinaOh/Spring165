@@ -1,76 +1,93 @@
-#ifndef flyingObject_h
-#define flyingObject_h
-
-
+#ifndef FLYING_OBJECT_H
+#define FLYING_OBJECT_H
 
 
 // Put your FlyingObject class here
+#include <iostream>
 #include "point.h"
 #include "uiDraw.h"
 #include "velocity.h"
-
 class FlyingObject
 {
+protected:
+	Velocity velocity;
+	Point point;
+	bool alive;
+	int lives;
+	int score;
+	int bonus;
+
+
+
 public:
-	FlyingObject();
-	~FlyingObject();
+	FlyingObject() : alive(true), score(1), bonus(0), lives(1) {}
 
 
+	/*********************************************
+	* Function: getPoint
+	* Description: returns the bird's location
+	*********************************************/
+	Point getPoint() { return point; }
 
-/*********************************************
-* Function: getPoint
-* Description: returns the bird's location
-*********************************************/
-Point getPoint();
+	/*********************************************
+	* Function: getVelocity
+	* Description: returns the bird's velocity
+	*********************************************/
+	Velocity getVelocity() { return velocity; }
 
-/*********************************************
-* Function: getVelocity
-* Description: returns the bird's velocity
-*********************************************/
-Velocity getVelocity();
+	/*********************************************
+	* Function: isAlive
+	* Description: Returns if the bird is alive
+	*********************************************/
+	bool isAlive() { return alive; }
 
-/*********************************************
-* Function: isAlive
-* Description: Returns if the bird is alive
-*********************************************/
-bool isAlive();
+	/*********************************************
+	* Function: getLives
+	* Description: Returns if the bird's lives
+	*********************************************/
+	int getLives() { return lives; }
 
-/*********************************************
-* Function: setPoint
-* Description: Sets the bird's point
-*********************************************/
-void setPoint(Point p);
+	/*********************************************
+	* Function: setPoint
+	* Description: Sets the bird's point
+	*********************************************/
+	void setPoint(Point point) { this->point = point; }
 
-/*********************************************
-* Function: setVelocity
-* Description: Sets the bird's velocity
-*********************************************/
-void setVelocity(Velocity v);
+	/*********************************************
+	* Function: setVelocity
+	* Description: Sets the bird's velocity
+	*********************************************/
+	void setVelocity(Velocity velocity) { this->velocity = velocity; }
 
-/*********************************************
-* Function: kill
-* Description: kills the bird
-*********************************************/
-void kill();
+	/*********************************************
+	* Function: setAlive
+	* Description: sets the bird to alive
+	*********************************************/
+	void setAlive(bool alive) { this->alive = alive; }
 
-virtual void draw();
+	/*********************************************
+	* Function: setLives
+	* Description: sets the bird's life
+	*********************************************/
+	void setLives(int lives) { this->lives = lives; }
 
-virtual void advance();
+	/*********************************************
+	* Function: kill
+	* Description: kills the bird
+	*********************************************/
+	void kill() { alive = false; }
 
-/*********************************************
-* Function: fire
-* Description: fires the bullets
-*********************************************/
-virtual void fire(Point point, float angle);
+	virtual void draw() = 0;
 
-/*********************************************
-* Function: hit
-* Description: keeps track of bird hits
-*********************************************/
-virtual int hit();
+	virtual void advance();
 
-private:
+	/*********************************************
+	* Function: hit
+	* Description: keeps track of bird hits
+	*********************************************/
+	int hit();
 
+	
 };
 
-#endif /* FlyingObject_h */
+#endif FLYING_OBJECT_H

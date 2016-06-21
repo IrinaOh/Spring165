@@ -10,20 +10,24 @@
 #ifndef BULLET_H
 #define BULLET_H
 
-#include "point.h"
-#include "velocity.h"
+#include <cmath>
 #include "flyingObject.h"
+
+#define M_PI 3.14
 
 class Bullet : public FlyingObject
 {
 public:
-	Bullet();
-	~Bullet();
+	Bullet() {};
 
+	void fire(Point point, float angle);
+	virtual void draw();
+	virtual void advance();
 
 
 
 private:
+	float angle;
 
 
 };

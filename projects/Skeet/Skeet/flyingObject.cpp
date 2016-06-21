@@ -3,56 +3,27 @@
 
 // Put your FlyingObject method bodies here
 
-FlyingObject::FlyingObject()
-{
-}
-
-FlyingObject::~FlyingObject()
-{
-}
-
-Point FlyingObject::getPoint()
-{
-	return Point();
-}
-
-Velocity FlyingObject::getVelocity()
-{
-	return Velocity();
-}
-
-bool FlyingObject::isAlive()
-{
-	return false;
-}
-
-void FlyingObject::setPoint(Point p)
-{
-}
-
-void FlyingObject::setVelocity(Velocity v)
-{
-}
-
-void FlyingObject::kill()
-{
-}
-
-void FlyingObject::draw()
-{
-}
-
-void FlyingObject::advance()
-{
-}
-
-void FlyingObject::fire(Point point, float angle)
-{
-}
-
+/**********************************************************************
+* Function: hit()
+* Purpose: keeps track of hits and kills bird
+**********************************************************************/
 int FlyingObject::hit()
 {
-	return 0;
+	lives--;
+	if (lives ==0)
+	{
+		kill();
+		return score + bonus;
+	}
+	return score;
 }
 
-
+/**********************************************************************
+* Function: advance()
+* Purpose: Advances the fling object
+**********************************************************************/
+void FlyingObject::advance()
+{
+	point.addX(velocity.getDx());
+	point.addY(velocity.getDy());
+}

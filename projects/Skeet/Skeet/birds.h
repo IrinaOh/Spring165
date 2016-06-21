@@ -9,25 +9,53 @@
 #ifndef BIRDS_H
 #define BIRDS_H
 
-#include "point.h"
-#include "uiDraw.h"
-#include "velocity.h"
 #include "flyingObject.h"
 
-class Bird : public FlyingObject 
+
+/**********************************************************************
+* Function: Bird Class
+* Purpose: Base bird object
+**********************************************************************/
+class Bird : public FlyingObject
 {
 public:
-	Bird(Point p);
-	~Bird();
-
-	
-
-
-
-
-private:
+	Bird();
 
 };
 
+/**********************************************************************
+* Function: Regular Bird Class
+* Purpose: Regular bird object
+**********************************************************************/
+class Reg_Bird : public Bird
+{
+public:
+	Reg_Bird() {}
+	virtual void draw();
+	virtual void advance(Bird & reg_bird) {};	
+};
 
+/**********************************************************************
+* Function: Tough Bird Class
+* Purpose: Tough bird object
+**********************************************************************/
+class T_Bird : public Bird
+{
+public:
+	T_Bird();
+	virtual void draw();
+	virtual void advance(Bird & t_bird) {};
+};
+
+/**********************************************************************
+* Function: Sacred Bird Class
+* Purpose: Sacred bird object
+**********************************************************************/
+class S_Bird : public Bird
+{
+public:
+	S_Bird() { bonus = -11; }
+	virtual void draw();
+	virtual void advance(Bird & s_bird) {};
+};
 #endif // !BIRDS_H
