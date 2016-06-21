@@ -1,15 +1,15 @@
 ###############################################################
 # Program:
-#     Milestone 08, Skeet
-#     Brother {Burton, Falin, Ercanbrack}, CS165
+#     Project 09, Skeet
+#     Brother McCracken, CS165
 # Author:
-#     your name here
+#     Edgar Wright
 # Summary:
-#     Put your summary code here... 
+#     This will allow the user to play the game of skeet. 
 # Above and Beyond
-#     When you submit your final project (not for milestones),
-#     list anything here that you did to go above and beyond
-#     the base requirements for your project.
+#     I changed the coloring of the number in the Tough bird
+#     I also change the color of the gun when the Scared bird
+#     is around.
 ###############################################################
 
 
