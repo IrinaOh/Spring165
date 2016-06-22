@@ -1,9 +1,9 @@
 /***********************************************************************
 * Program:
 *    Checkpoint 10b, Removing from Vectors
-*    Brother {Burton, Falin, Ercanbrack}, CS165
+*    Brother McCracken, CS165
 * Author:
-*    your name
+*    Edgar Wright
 * Summary: 
 *    Summaries are not necessary for checkpoint assignments.
 ************************************************************************/
@@ -99,9 +99,10 @@ void promptInventory(vector<Food*> &items)
          // TODO: Fill this in!
          // Create a new food item using name, month, and year
          // Add it to the items vector
+		 Food* item = new Food(name, month, year);
 
+		 items.push_back(item);
          
-
          cout << endl;
       }
 
@@ -122,7 +123,11 @@ void displayInventory(vector<Food*> &items)
    // TODO: Fill this in!
    // Use an iterator to walk through the vector
    // and call the display() method on each Food item
-
+   for (vector<Food*>::iterator it = items.begin();
+	   it != items.end(); ++it)
+   {
+	   (*it)->display(); 
+   } 
 
 }
 
@@ -142,6 +147,26 @@ void removeExpiredItems(vector<Food*> &items, int currentMonth,
    // Use an iterator to walk through the vector
    // and detect each item that has expired. Then delete it
    // and erase it from the list.
+
+   vector<Food*>::iterator it = items.begin();
+
+   while (it != items.end())
+   {
+	   if ((*it)->getYear() <= currentYear && (*it)->getMonth() < currentMonth)
+	   {
+		   Food* pFood = *it;
+			delete pFood;
+			pFood = NULL;
+
+			it = items.erase(it);
+
+	   }
+	   else
+	   {
+		   ++it;
+	   }
+
+   }
 
 
 }

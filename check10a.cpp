@@ -36,23 +36,28 @@ int main()
 	intVector.pop_back();
 
 	cout << "Your list is:" << endl;
+
 	for (std::vector<int>::iterator it = intVector.begin();
 		it != intVector.end(); ++it)
 	{
 		cout << *it << endl;
 	}
 	
+	cout << endl;
+	
 	do
 	{
 		string valString;
 		cout << "Enter string: ";
-		getline(cin, valString);
+		cin >> valString;
+		//cin.ignore(256, '\n');
 		stringVector.push_back(valString);
 	} while (stringVector.back() != "quit");
 
 	stringVector.pop_back();
 
 	cout << "Your list is:" << endl;
+
 	for (std::vector<string>::iterator it1 = stringVector.begin();
 		it1 != stringVector.end(); ++it1)
 	{
