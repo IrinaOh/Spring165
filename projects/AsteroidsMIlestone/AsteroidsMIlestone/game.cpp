@@ -7,6 +7,7 @@
 
 #include "game.h"
 
+
 // These are needed for the getClosestDistance function...
 #include <limits>
 #include <algorithm>
@@ -49,3 +50,59 @@ float Game :: getClosestDistance(const FlyingObject &obj1, const FlyingObject &o
 }
 */
 
+Game::Game(Point tl, Point br)
+{
+	rock = NULL;
+}
+
+Rock* Game::createRock()
+{
+	Rock* newRock = NULL;
+
+	newRock = new BigRock();
+
+	return newRock;
+}
+
+Game::~Game()
+{
+}
+
+void Game::handleInput(const Interface & ui)
+{
+}
+
+void Game::advance()
+{
+}
+
+void Game::draw(const Interface & ui)
+{
+	for (int i = 0; i < 6; i++)
+	{
+		rock->draw();
+	}
+
+}
+
+bool Game::isOnScreen(const Point & point)
+{
+	return false;
+}
+
+void Game::advanceBullets()
+{
+}
+
+void Game::advanceRock()
+{
+}
+
+
+void Game::handleCollisions()
+{
+}
+
+void Game::cleanUpZombies()
+{
+}
