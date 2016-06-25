@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{14ED9262-9EF8-4C03-87FB-D72931C15FFB}</ProjectGuid>
-    <RootNamespace>Skeet</RootNamespace>
+    <ProjectGuid>{1FC337F4-6D8B-4EDD-9AF0-89F7741B91D2}</ProjectGuid>
+    <RootNamespace>Asteroids</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -74,11 +74,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
-    <Bscmake>
-      <PreserveSbr>true</PreserveSbr>
-    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -114,8 +110,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="birds.h" />
+    <ClInclude Include="bullet.h" />
+    <ClInclude Include="flyingObject.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="point.h" />
+    <ClInclude Include="rifle.h" />
+    <ClInclude Include="uiDraw.h" />
+    <ClInclude Include="uiInteract.h" />
+    <ClInclude Include="velocity.h" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="makefile" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="birds.cpp" />
@@ -129,27 +135,7 @@
     <ClCompile Include="uiInteract.cpp" />
     <ClCompile Include="velocity.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="birds.h" />
-    <ClInclude Include="bullet.h" />
-    <ClInclude Include="flyingObject.h" />
-    <ClInclude Include="game.h" />
-    <ClInclude Include="point.h" />
-    <ClInclude Include="rifle.h" />
-    <ClInclude Include="uiDraw.h" />
-    <ClInclude Include="uiInteract.h" />
-    <ClInclude Include="velocity.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets" Condition="Exists('..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" />
-    <Import Project="..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets" Condition="Exists('..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" />
   </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets'))" />
-    <Error Condition="!Exists('..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets'))" />
-  </Target>
 </Project>
