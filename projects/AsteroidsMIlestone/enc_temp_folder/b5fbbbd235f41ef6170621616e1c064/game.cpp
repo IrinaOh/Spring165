@@ -52,7 +52,7 @@ float Game :: getClosestDistance(const FlyingObject &obj1, const FlyingObject &o
 
 Game::Game(Point tl, Point br)
 {
-	
+	rock = NULL;
 }
 
 
@@ -66,12 +66,42 @@ void Game::handleInput(const Interface & ui)
 
 void Game::advance()
 {
-	
+	if (rock == NULL)
+	{
+		// there is no bird right now, possibly create one
+
+		// "resurrect" it will some random chance
+		if (random(0, 30) == 0)
+		{
+			// create a new bird
+			rock = createRock();
+		}
+	}
+	else
+	{
+		// we have a bird, make sure it's alive
+		if (rock->isAlive())
+		{
+			// move it forward
+			rock->advance();
+
+			// check if the bird has gone off the screen
+			if (!isOnScreen(rock->getPoint()))
+			{
+				// We have missed the bird
+				rock->kill();
+			}
+		}
+	}
 }
 
-Rock* Game :: createRock()
+Rock* Game::createRock()
 {
+	Rock* newRock = NULL;
 
+	newRock = new BigRock();
+
+	return newRock;
 }
 
 
@@ -85,30 +115,26 @@ bool Game :: isOnScreen(const Point & point)
 
 void Game :: draw(const Interface & ui)
 {
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < 6; i++)
 	{
-		Rock* newRock	
-		newRock = new BigRock();
-		
-		
-		rocks.push_back(newRock);
+		rock->draw();
 	}
 
 }
-void Game :: advanceBullets()
+void Game::advanceBullets()
 {
 }
 
-void Game :: advanceRock()
+void Game::advanceRock()
 {
-
+	rock = createRock();
 }
 
 
-void Game :: handleCollisions()
+void Game::handleCollisions()
 {
 }
 
-void Game :: cleanUpZombies()
+void Game::cleanUpZombies()
 {
 }

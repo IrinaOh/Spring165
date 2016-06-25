@@ -10,6 +10,9 @@
 #define SMALL_ROCK_SPIN 10
 
 #include "flyingObject.h"
+#include "point.h"
+#include "uiDraw.h"
+#include "velocity.h"
 
 // Define the following classes here:
 //   Rock

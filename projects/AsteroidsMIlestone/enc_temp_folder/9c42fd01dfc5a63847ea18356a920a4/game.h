@@ -65,7 +65,7 @@ private:
 	Ship ship;
 	std::vector<Bullet> bullets;
 
-	std::vector<Rock> rocks;
+	Rock * rock;
 
 	/*************************************************
 	* Private methods to help with the game logic.

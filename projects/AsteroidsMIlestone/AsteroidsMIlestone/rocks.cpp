@@ -26,10 +26,11 @@ void BigRock::draw()
 
 void MediumRock::draw()
 {
-	drawMediumAsteroid(getPoint(), MEDIUM_ROCK_SIZE);
+	drawMediumAsteroid(getPoint(), MEDIUM_ROCK_SPIN);
 }
 
 void SmallRock::draw()
 {
 	drawSmallAsteroid(getPoint(), SMALL_ROCK_SPIN);
+
 }
