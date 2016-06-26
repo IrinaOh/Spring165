@@ -55,6 +55,8 @@ public:
 	*********************************************/
 	void setPoint(Point point) { this->point = point; }
 
+	
+
 	/*********************************************
 	* Function: setVelocity
 	* Description: Sets the bird's velocity

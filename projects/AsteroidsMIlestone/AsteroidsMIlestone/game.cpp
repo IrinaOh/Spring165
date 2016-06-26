@@ -66,7 +66,7 @@ void Game::handleInput(const Interface & ui)
 
 void Game::advance()
 {
-	
+	advanceRock();
 }
 
 void Game :: createRock()
@@ -106,7 +106,25 @@ void Game :: advanceBullets()
 
 void Game :: advanceRock()
 {
+	if (rocks.empty())
+	{
+	createRock();
 
+	}
+	else
+	{
+		
+		for (vector <Rock*> ::iterator it = rocks.begin(); it != rocks.end(); ++it)
+		{
+			(*it)->advance();
+			
+			if ( !isOnScreen((*it)->getPoint()))
+			{
+				(*it)->setPoint((*it)->getPoint().invert());
+			}
+		
+		}
+	}
 }
 
 
