@@ -5,6 +5,8 @@
 
 
 
+
+
 void FlyingObject::advance()
 {
 	point.addX(velocity.getDx());

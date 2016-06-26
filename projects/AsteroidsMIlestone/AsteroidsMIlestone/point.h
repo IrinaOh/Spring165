@@ -35,8 +35,9 @@ public:
    void setY(float y);
    void addX(float dx)      { setX(getX() + dx);     }
    void addY(float dy)      { setY(getY() + dy);     }
-   float invert() { getX() * -1; return x; getY() * -1; return y; }
-   
+   void invertX()    { getX() * -1;     }
+   void invertY()    { getY() * -1;     } 
+   void invert();
 private:
    float x;           // horizontal position
    float y;           // vertical position

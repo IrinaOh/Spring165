@@ -55,7 +55,7 @@ public:
 	*********************************************/
 	void setPoint(Point point) { this->point = point; }
 
-	
+	void invert();
 
 	/*********************************************
 	* Function: setVelocity

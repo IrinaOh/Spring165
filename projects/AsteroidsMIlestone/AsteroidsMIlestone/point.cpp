@@ -11,6 +11,8 @@
 #include "point.h"
 #include <cassert>
 
+
+
 /******************************************
  * POINT : CONSTRUCTOR WITH X,Y
  * Initialize the point to the passed position
@@ -20,7 +22,11 @@ Point::Point(float x, float y) : x(0.0), y(0.0)
    setX(x);
    setY(y);
 }
-
+void Point::invert()
+{
+	this->invertX();
+	this->invertY();
+}
 /*******************************************
  * POINT : SET X
  * Set the x position if the value is within range

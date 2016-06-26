@@ -120,7 +120,11 @@ void Game :: advanceRock()
 			
 			if ( !isOnScreen((*it)->getPoint()))
 			{
-				(*it)->setPoint((*it)->getPoint().invert());
+				Point invPoint = (*it)->getPoint();
+
+				invPoint.invert();
+
+				(*it)->setPoint(invPoint);
 			}
 		
 		}
