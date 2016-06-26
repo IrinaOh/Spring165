@@ -21,7 +21,7 @@ Rock::Rock()
 
 void BigRock::draw()
 {
-	drawLargeAsteroid(point, BIG_ROCK_SPIN);
+	drawLargeAsteroid(getPoint(), BIG_ROCK_SPIN);
 }
 
 void MediumRock::draw()

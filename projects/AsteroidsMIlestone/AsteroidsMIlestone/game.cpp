@@ -69,9 +69,16 @@ void Game::advance()
 	
 }
 
-Rock* Game :: createRock()
+void Game :: createRock()
 {
+	for (int i = 0; i < 5; i++)
+	{
+		Rock* newRock;
+		newRock = new BigRock();
+		rocks.push_back(newRock);
 
+	}
+	
 }
 
 
@@ -85,13 +92,11 @@ bool Game :: isOnScreen(const Point & point)
 
 void Game :: draw(const Interface & ui)
 {
-	for (int i = 0; i < 5; i++)
+	for (vector <Rock*> :: iterator it = rocks.begin(); it != rocks.end(); ++it)
 	{
-		Rock* newRock	
-		newRock = new BigRock();
+		(*it)->draw();
 		
 		
-		rocks.push_back(newRock);
 	}
 
 }

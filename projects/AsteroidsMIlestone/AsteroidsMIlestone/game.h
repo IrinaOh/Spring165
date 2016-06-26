@@ -65,7 +65,7 @@ private:
 	Ship ship;
 	std::vector<Bullet> bullets;
 
-	std::vector<Rock> rocks;
+	std::vector<Rock*> rocks;
 
 	/*************************************************
 	* Private methods to help with the game logic.
@@ -73,7 +73,7 @@ private:
 	bool isOnScreen(const Point & point);
 	void advanceBullets();
 	void advanceRock();
-	Rock* createRock();
+	void createRock();
 
 	void handleCollisions();
 	void cleanUpZombies();
